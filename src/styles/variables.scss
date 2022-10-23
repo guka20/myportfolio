@@ -1,0 +1,10 @@
+$bg-color: black;
+$bg-sec-color: rgb(17, 17, 17);
+$color: rgb(235, 235, 235);
+$secondary-color: rgb(33, 129, 255);
+$max-width: 1100px;
+@mixin fit-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

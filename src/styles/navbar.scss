@@ -1,0 +1,52 @@
+.nav_bar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  background-color: $bg-sec-color;
+  box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
+  -webkit-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
+  -moz-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
+  &_border {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    max-width: $max-width;
+    .logo {
+      font-size: 1.6rem;
+      color: $secondary-color;
+      font-weight: bold;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+    .navigators {
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+      li {
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 7px 5px;
+        transition: 0.2s;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 0px;
+          left: 0;
+          height: 3px;
+          background-color: $secondary-color;
+          transition: width 0.4s;
+        }
+        &:hover {
+          color: $secondary-color;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
