@@ -1,7 +1,36 @@
-import React from 'react'
-
+import React from "react";
+import { ProjectItem } from "../components/ProjectItem";
 export const Projects = () => {
+  const projetsList = [
+    {
+      name:"My Portfolio",
+    },
+    {
+      name: "Movies",
+      github: "https://github.com/guka20/movies",
+      website: "https://movies-silk-pi.vercel.app/",
+    },
+    {
+      name: "Rest Country Api",
+      github: "https://github.com/guka20/rest-countries-api",
+      website: "https://rest-country-api-one.vercel.app/",
+    },
+  ];
   return (
-    <div>Projects</div>
-  )
-}
+    <section className="projects">
+      <header>
+        <h1>My Highest Level Projects</h1>
+      </header>
+      <main className="projects-list">
+        {projetsList.map((l, index) => (
+          <ProjectItem
+            key={index}
+            name={l.name}
+            github={l.github}
+            website={l.website}
+          />
+        ))}
+      </main>
+    </section>
+  );
+};

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Routers } from "./Routers/Routers";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/index.scss";
@@ -8,9 +8,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Routers />
-        </Suspense>
+        <Routers />
       </Router>
     </div>
   );

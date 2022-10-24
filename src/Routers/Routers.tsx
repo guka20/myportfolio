@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense  } from "react";
 import { useRoutes } from "react-router-dom";
 
 const Home = lazy(() =>
@@ -16,5 +16,5 @@ export const Routers = () => {
     { path: "/Projects", element: <Projects /> },
     { path: "/Contact", element: <Contact /> },
   ]);
-  return <>{routes}</>;
+  return <Suspense fallback={<h1>Loading...</h1>}>{routes}</Suspense>;
 };

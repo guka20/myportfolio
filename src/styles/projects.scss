@@ -1,0 +1,87 @@
+header {
+  margin-top: 40px;
+  h1 {
+    color: rgb(218, 204, 204);
+    font-size: 2rem;
+    animation-name: header;
+    animation-duration: 4s;
+  }
+}
+section.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects-list {
+  margin-top: 30px;
+  height: 100px;
+  width: 95%;
+  max-width: $max-width;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.project_item {
+  width: 200px;
+  height: 230px;
+  background-color: $bg-sec-color;
+  border-radius: 10px;
+  margin: 20px 15px;
+  box-shadow: 1px 3px 17px -6px rgba(255, 255, 255, 0.54);
+  -webkit-box-shadow: 1px 3px 17px -6px rgba(255, 255, 255, 0.54);
+  -moz-box-shadow: 1px 3px 17px -6px rgba(255, 255, 255, 0.54);
+  .image {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    background-image: url("https://st4.depositphotos.com/1907633/19947/i/950/depositphotos_199473306-stock-photo-virtual-screen-dashboard-project-management.jpg");
+    @include fit-background;
+  }
+  .name {
+    font-size: 1.4rem;
+    padding: 13px 0;
+    text-transform: capitalize;
+  }
+  .directions {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    // margin-top: 15px;
+    span {
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      padding: 5px;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    span::after {
+      transition: all ease-in-out 0.5s;
+      left: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      width: 0px;
+      height: 2px;
+      background-color: white;
+    }
+    span:hover::after {
+      width: 100%;
+      background-color: $secondary-color;
+    }
+  }
+}
+@keyframes header {
+  1% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
