@@ -5,7 +5,7 @@ export const Projects = () => {
     {
       name: "My Portfolio",
       github: "https://github.com/guka20/myportfolio",
-      website: "https://github.com/guka20/myportfolio",
+      website: "https://myportfolio-gules-xi.vercel.app/",
     },
     {
       name: "Movies",
