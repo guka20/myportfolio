@@ -3,7 +3,9 @@ import { ProjectItem } from "../components/ProjectItem";
 export const Projects = () => {
   const projetsList = [
     {
-      name:"My Portfolio",
+      name: "My Portfolio",
+      github: "https://github.com/guka20/myportfolio",
+      website: "https://github.com/guka20/myportfolio",
     },
     {
       name: "Movies",
