@@ -7,11 +7,11 @@ export const Projects = () => {
       github: "https://github.com/guka20/myportfolio",
       website: "https://myportfolio-gules-xi.vercel.app/",
     },
-    {
-      name: "Movies",
-      github: "https://github.com/guka20/movies",
-      website: "https://movies-silk-pi.vercel.app/",
-    },
+    // {
+    //   name: "Movies",
+    //   github: "https://github.com/guka20/movies",
+    //   website: "https://movies-silk-pi.vercel.app/",
+    // },
     {
       name: "Rest Country Api",
       github: "https://github.com/guka20/rest-countries-api",

@@ -1,9 +1,14 @@
 import React from "react";
-
+import { saveAs } from "file-saver";
 export const Home = () => {
+  const saveFile = () => {
+    saveAs(
+      require("../assets/Gurami-Davitadze.pdf"),
+      "Gurami-Davitadze-cv.pdf"
+    );
+  };
   return (
     <>
-      <main className="welcome">Welcome To My Portfolio</main>
       <div className="home_page">
         <main className="main">
           <div className="image" />
@@ -12,7 +17,11 @@ export const Home = () => {
             <h1>Front-End Developer</h1>
             <div className="description">
               I am Front-End (ReactJS) Developer, I am able to build any type of
-              website for as desktop as tablet and mobile
+              website for desktop as well as tablet and mobile. If you want to
+              see my resume click{" "}
+              <button onClick={saveFile} className="save-cv">
+                here
+              </button>
             </div>
           </div>
         </main>
