@@ -21,6 +21,9 @@ body {
   overflow-y: auto;
   background-color: $bg-color;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .validation {
   margin-top: 5px;

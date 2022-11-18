@@ -1,5 +1,6 @@
 import React from "react";
 import { saveAs } from "file-saver";
+import { BsFacebook, BsLinkedin, BsGithub, BsDiscord } from "react-icons/bs";
 export const Home = () => {
   const saveFile = () => {
     saveAs(
@@ -10,7 +11,7 @@ export const Home = () => {
   return (
     <>
       <div className="home_page">
-        <main className="main">
+        <header className="main">
           <div className="image" />
           <div className="text">
             <h1>Gurami Davitadze</h1>
@@ -24,8 +25,8 @@ export const Home = () => {
               </button>
             </div>
           </div>
-        </main>
-        <footer className="About">
+        </header>
+        <main className="About">
           <h2>My Skills:</h2>
           <div className="skill">
             <div>HTML</div>
@@ -51,8 +52,23 @@ export const Home = () => {
             <div>GIT / Github</div>
             <div className="progress git" />
           </div>
-        </footer>
+        </main>
       </div>
+      <footer className="socials">
+        <h1>Socials:</h1>
+        <span className="icon">
+          <BsFacebook />
+        </span>
+        <span className="icon">
+          <BsLinkedin />
+        </span>
+        <span className="icon">
+          <BsGithub />
+        </span>
+        <span className="icon">
+          <BsDiscord />
+        </span>
+      </footer>
     </>
   );
 };

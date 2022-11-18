@@ -1,5 +1,6 @@
-import React, { lazy, Suspense  } from "react";
+import React, { lazy, Suspense } from "react";
 import { useRoutes } from "react-router-dom";
+import { Loading } from "../components/Loading";
 
 const Home = lazy(() =>
   import("../pages/Home").then(({ Home }) => ({ default: Home }))
@@ -16,5 +17,5 @@ export const Routers = () => {
     { path: "/Projects", element: <Projects /> },
     { path: "/Contact", element: <Contact /> },
   ]);
-  return <Suspense fallback={<h1>Loading...</h1>}>{routes}</Suspense>;
+  return <Suspense fallback={<Loading />}>{routes}</Suspense>;
 };
