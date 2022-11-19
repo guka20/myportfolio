@@ -57,16 +57,24 @@ export const Home = () => {
       <footer className="socials">
         <h1>Socials:</h1>
         <span className="icon">
-          <BsFacebook />
+          <a href="https://www.facebook.com/gu.ka.75098/">
+            <BsFacebook />
+          </a>
         </span>
         <span className="icon">
-          <BsLinkedin />
+          <a href="https://www.linkedin.com/in/gurami-davitadze-5013a8224/">
+            <BsLinkedin />
+          </a>
         </span>
         <span className="icon">
-          <BsGithub />
+          <a href="https://github.com/guka20">
+            <BsGithub />
+          </a>
         </span>
         <span className="icon">
-          <BsDiscord />
+          <a href="https://discord.com/channels/guka#7954">
+            <BsDiscord />
+          </a>
         </span>
       </footer>
     </>
