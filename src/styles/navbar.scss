@@ -1,14 +1,13 @@
 .nav_bar {
   width: 100%;
-  height: 60px;
-  display: flex;
-  justify-content: center;
   background-color: $bg-sec-color;
   box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
   -webkit-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
   -moz-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
   &_border {
+    margin: 0 auto;
     display: flex;
+    padding: 7px;
     align-items: center;
     justify-content: space-between;
     width: 95%;
@@ -19,6 +18,15 @@
       font-weight: bold;
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     }
+    .hamburger {
+      background-color: transparent;
+      font-size: 27px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 25px;
+      display: none;
+    }
     .navigators {
       width: 50%;
       display: flex;
@@ -26,14 +34,12 @@
       li {
         font-size: 1.2rem;
         cursor: pointer;
-        padding: 7px 5px;
         transition: 0.2s;
         position: relative;
-
         &::after {
           content: "";
           position: absolute;
-          bottom: 0;
+          bottom: -5px;
           width: 0px;
           left: 0;
           height: 3px;
@@ -47,6 +53,54 @@
           }
         }
       }
+      &.active {
+        z-index: 1;
+        width: 200px;
+        padding: 0;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 50px;
+        right: 15px;
+        background-color: rgba(49, 49, 49, 0.5);
+        li {
+          padding: 20px 0;
+          animation-name: navigation;
+          animation-duration: 1s;
+          &::after {
+            bottom: 10px;
+          }
+        }
+      }
     }
+  }
+}
+@media screen and (max-width: 499px) {
+  .navigators {
+    display: none !important;
+  }
+  .hamburger {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 499px) {
+  .navigators.active {
+    padding: 0 !important;
+    background-color: transparent !important;
+    height: 20px;
+    top: 0 !important;
+    width: 50% !important;
+    flex-direction: row !important;
+    position: relative !important;
+    justify-content: space-evenly !important;
+  }
+}
+@keyframes navigation {
+  0% {
+    padding: 0px;
+  }
+  100% {
+    padding: 20px 0;
   }
 }
