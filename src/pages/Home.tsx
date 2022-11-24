@@ -55,7 +55,7 @@ export const Home = () => {
         </main>
       </div>
       <footer className="socials">
-        <h1>Socials:</h1>
+        <h2>Socials:</h2>
         <span className="icon">
           <a href="https://www.facebook.com/gu.ka.75098/">
             <BsFacebook />

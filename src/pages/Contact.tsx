@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BsDiscord, BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 type GuestDataTypes = {
   name: string;
   email: string;
@@ -12,7 +13,12 @@ type FocusedDataTypes = {
   email: boolean;
   message: boolean;
 };
-
+type HandleInput = {
+  target: {
+    value: string;
+    name: string;
+  };
+};
 const emailRegex =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const Contact = () => {
@@ -65,6 +71,10 @@ export const Contact = () => {
       setIsButtonDisable(true);
     } else setIsButtonDisable(false);
   }, [guestData]);
+  const handleInputChanges = (e: HandleInput) => {
+    const { value, name } = e.target;
+    setGuestData({ ...guestData, [name]: value });
+  };
   const sendEmail = () => {
     emailjs
       .send("service_6gh4yaa", "template_58abdzz", guestData)
@@ -77,98 +87,124 @@ export const Contact = () => {
       .catch(notifyError);
   };
   return (
-    <section className="about_page">
-      <ToastContainer />
-      <aside className="infromations">
-        <h1>Write Me</h1>
-        <div className="input-pleace">
-          <label>Name *</label>
-          <input
-            onFocus={() => setIsFocused({ ...isFocused, name: true })}
-            className="input"
-            placeholder="Name"
-            value={guestData.name}
-            onChange={(e) =>
-              setGuestData({ ...guestData, name: e.target.value })
-            }
-          />
-          <span
-            className="validation"
-            style={{
-              opacity:
-                (isFocused.name && guestData.name) ||
-                (!isFocused.name && !guestData.name)
-                  ? 0
-                  : 1,
-            }}
+    <>
+      <section className="about_page">
+        <ToastContainer />
+        <aside className="infromations">
+          <h1>Write Me</h1>
+          <div className="input-pleace">
+            <label>Name*</label>
+            <input
+              onBlur={() => setIsFocused({ ...isFocused, name: true })}
+              className="input"
+              placeholder="Name"
+              name="name"
+              value={guestData.name}
+              onChange={handleInputChanges}
+            />
+            <span
+              className="validation"
+              style={{
+                opacity: !isFocused.name || guestData.name ? 0 : 1,
+              }}
+            >
+              Please input name
+            </span>
+          </div>
+          <div className="input-pleace">
+            <label>E-mail*</label>
+            <input
+              onBlur={() => setIsFocused({ ...isFocused, email: true })}
+              className="input"
+              name="email"
+              placeholder="example@gmail.com"
+              value={guestData.email}
+              onChange={handleInputChanges}
+            />
+            <span
+              className="validation"
+              style={{
+                opacity: !isFocused.email || guestData.email ? 0 : 1,
+              }}
+            >
+              Please input correct email
+            </span>
+          </div>
+          <div className="verification">Verification</div>
+          <div className="not-robot">
+            <input
+              type="checkbox"
+              onClick={(e) => setIsRobot(e.currentTarget.checked)}
+            />
+            I am not a robot
+          </div>
+        </aside>
+        <main className="message">
+          <header className="header">
+            <div>Message*</div>
+            <span
+              className="validation"
+              style={{
+                opacity: !isFocused.message || guestData.message ? 0 : 1,
+              }}
+            >
+              Please write text
+            </span>
+          </header>
+          <div className="message-pleace">
+            <div
+              className="message-box"
+              contentEditable="true"
+              onBlur={() => setIsFocused({ ...isFocused, message: true })}
+              data-text="Write text here..."
+              onInput={(e) =>
+                setGuestData({
+                  ...guestData,
+                  message: e.currentTarget.outerText,
+                })
+              }
+            />
+          </div>
+          <button disabled={!isButtonDisable} onClick={sendEmail}>
+            SEND MESSAGE
+          </button>
+        </main>
+      </section>
+      <footer className="socials">
+        <h2>Socials:</h2>
+        <span className="icon">
+          <a
+            href="https://www.facebook.com/gu.ka.75098/"
+            target="_blank"
+            rel="noreferrer"
           >
-            Please input name
-          </span>
-        </div>
-        <div className="input-pleace">
-          <label>E-mail *</label>
-          <input
-            onFocus={() => setIsFocused({ ...isFocused, email: true })}
-            className="input"
-            placeholder="example@gmail.com"
-            value={guestData.email}
-            onChange={(e) =>
-              setGuestData({ ...guestData, email: e.target.value })
-            }
-          />
-          <span
-            className="validation"
-            style={{
-              opacity:
-                (isFocused.email && emailRegex.test(guestData.email)) ||
-                (!isFocused.email && !emailRegex.test(guestData.email))
-                  ? 0
-                  : 1,
-            }}
+            <BsFacebook />
+          </a>
+        </span>
+        <span className="icon">
+          <a
+            href="https://www.linkedin.com/in/gurami-davitadze-5013a8224/"
+            target="_blank"
+            rel="noreferrer"
           >
-            Please input correct email
-          </span>
-        </div>
-        <div className="verification">Verification</div>
-        <div className="not-robot">
-          <input
-            type="checkbox"
-            onClick={(e) => setIsRobot(e.currentTarget.checked)}
-          />
-          I am not a robot
-        </div>
-      </aside>
-      <main className="message">
-        <header className="header">
-          <div>Message *</div>
-          <span
-            className="validation"
-            style={{
-              opacity:
-                (isFocused.message && guestData.message) ||
-                (!isFocused.message && !guestData.message)
-                  ? 0
-                  : 1,
-            }}
+            <BsLinkedin />
+          </a>
+        </span>
+        <span className="icon">
+          <a href="https://github.com/guka20" target="_blank" rel="noreferrer">
+            <BsGithub />
+          </a>
+        </span>
+        <span className="icon">
+          <a
+            href="https://discord.com/channels/guka#7954"
+            target="_blank"
+            rel="noreferrer"
           >
-            Please write text
-          </span>
-        </header>
-        <div className="message-pleace">
-          <div
-            className="message-box"
-            contentEditable="true"
-            onFocus={() => setIsFocused({ ...isFocused, message: true })}
-            data-text="Write text here..."
-            onInput={(e) =>
-              setGuestData({ ...guestData, message: e.currentTarget.outerText })
-            }
-          />
-        </div>
-        <button disabled={!isButtonDisable} onClick={sendEmail}>
-          SEND MESSAGE
-        </button>
-      </main>
-    </section>
+            <BsDiscord />
+          </a>
+        </span>
+      </footer>
+    </>
   );
 };

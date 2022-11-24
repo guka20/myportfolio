@@ -110,8 +110,11 @@
 footer.socials {
   text-align: center;
   margin-top: 50px;
+  padding-bottom: 40px;
+  animation-name: main-opac;
+  animation-duration: 6s;
   .icon {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0 10px;
     cursor: pointer;
 
@@ -157,6 +160,10 @@ footer.socials {
 @keyframes git-an {
   100% {
     width: 55%;
+  }
+}
+@keyframes social {
+  100% {
   }
 }
 @media screen and (max-width: 750px) {
