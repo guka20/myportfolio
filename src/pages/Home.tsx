@@ -53,30 +53,29 @@ export const Home = () => {
             <div className="progress git" />
           </div>
         </main>
+        <footer className="socials">
+          <span className="icon">
+            <a href="https://www.facebook.com/gu.ka.75098/">
+              <BsFacebook />
+            </a>
+          </span>
+          <span className="icon">
+            <a href="https://www.linkedin.com/in/gurami-davitadze-5013a8224/">
+              <BsLinkedin />
+            </a>
+          </span>
+          <span className="icon">
+            <a href="https://github.com/guka20">
+              <BsGithub />
+            </a>
+          </span>
+          <span className="icon">
+            <a href="https://discord.com/channels/guka#7954">
+              <BsDiscord />
+            </a>
+          </span>
+        </footer>
       </div>
-      <footer className="socials">
-        <h2>Socials:</h2>
-        <span className="icon">
-          <a href="https://www.facebook.com/gu.ka.75098/">
-            <BsFacebook />
-          </a>
-        </span>
-        <span className="icon">
-          <a href="https://www.linkedin.com/in/gurami-davitadze-5013a8224/">
-            <BsLinkedin />
-          </a>
-        </span>
-        <span className="icon">
-          <a href="https://github.com/guka20">
-            <BsGithub />
-          </a>
-        </span>
-        <span className="icon">
-          <a href="https://discord.com/channels/guka#7954">
-            <BsDiscord />
-          </a>
-        </span>
-      </footer>
     </>
   );
 };

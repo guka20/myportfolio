@@ -109,17 +109,20 @@
 }
 footer.socials {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   padding-bottom: 40px;
   animation-name: main-opac;
   animation-duration: 6s;
   .icon {
-    font-size: 25px;
-    margin: 0 10px;
     cursor: pointer;
-
     svg {
+      font-size: 25px;
+      margin: 5px 10px;
       color: $secondary-color;
+      transition: 0.3s transform;
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 }
