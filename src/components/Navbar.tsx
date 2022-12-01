@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isUsed, setIsUsed] = useState<boolean>(false);
+  useEffect(() => {
+    window.addEventListener("resize", function () {
+      setIsActive(false);
+      setIsUsed(false);
+    });
+  }, []);
   return (
     <nav className="navbar">
       <div className="nav">
