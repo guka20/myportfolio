@@ -1,40 +1,21 @@
-.nav_bar {
+nav.navbar {
   width: 100%;
-  background-color: $bg-sec-color;
   box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
   -webkit-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
   -moz-box-shadow: 1px 3px 27px 6px rgba(130, 130, 130, 0.4);
-  &_border {
+  div.nav {
     margin: 0 auto;
-    display: flex;
-    padding: 7px;
-    align-items: center;
-    justify-content: space-between;
     width: 95%;
     max-width: $max-width;
-    .logo {
-      font-size: 1.6rem;
-      color: $secondary-color;
-      font-weight: bold;
-      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    }
-    .hamburger {
-      background-color: transparent;
-      font-size: 27px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 10px 25px;
-      display: none;
-    }
-    .navigators {
-      width: 50%;
+    background-color: $bg-sec-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
       display: flex;
-      justify-content: space-evenly;
       li {
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: 0.2s;
+        margin: 0 10px;
+        font-size: 20px;
         position: relative;
         &::after {
           content: "";
@@ -46,61 +27,93 @@
           background-color: $secondary-color;
           transition: width 0.4s;
         }
-        &:hover {
+        a {
+          transition: color 0.4s;
+        }
+        a:hover {
           color: $secondary-color;
+        }
+        &:hover {
           &::after {
             width: 100%;
           }
         }
       }
-      &.active {
+    }
+    .hamburger {
+      background-color: transparent;
+      cursor: pointer;
+      width: 40px;
+      height: 30px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      display: none;
+      .line {
+        width: 90%;
+        height: 3px;
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  nav.navbar div.nav ul {
+    display: flex !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: flex !important;
+  }
+  nav.navbar {
+    div.nav {
+      position: relative;
+      ul {
         z-index: 1;
-        width: 200px;
-        padding: 0;
-        display: flex !important;
+        position: absolute;
+        top: 40px;
+        right: -10px;
+        width: 100px;
         flex-direction: column;
         align-items: center;
-        position: absolute;
-        top: 50px;
-        right: 15px;
-        background-color: rgba(49, 49, 49, 0.5);
+        background-color: rgba(18, 18, 18, 0.9);
+        overflow-y: hidden;
+        padding: 0 20px;
+        height: 0;
+
+        &.animate {
+          height: auto;
+          animation-name: height;
+          animation-duration: 2s;
+        }
+        &.close {
+          height: 0px;
+          animation-name: close;
+          animation-duration: 2s;
+        }
         li {
-          padding: 20px 0;
-          animation-name: navigation;
-          animation-duration: 1s;
-          &::after {
-            bottom: 10px;
-          }
+          margin: 10px 0;
+          text-align: center;
         }
       }
     }
   }
 }
-@media screen and (max-width: 499px) {
-  .navigators {
-    display: none !important;
+@keyframes height {
+  from {
+    height: 0px;
   }
-  .hamburger {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 499px) {
-  .navigators.active {
-    padding: 0 !important;
-    background-color: transparent !important;
-    height: 20px;
-    top: 0 !important;
-    width: 50% !important;
-    flex-direction: row !important;
-    position: relative !important;
-    justify-content: space-evenly !important;
+  to {
+    height: 129px;
   }
 }
-@keyframes navigation {
-  0% {
-    padding: 0px;
+@keyframes close {
+  from {
+    height: 129px;
   }
-  100% {
-    padding: 20px 0;
+  to {
+    height: 0px;
   }
 }
