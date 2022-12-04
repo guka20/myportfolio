@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import { Loading } from "../components/Loading";
 
 const Home = lazy(() =>
@@ -16,6 +16,7 @@ export const Routers = () => {
     { path: "/", element: <Home /> },
     { path: "/Projects", element: <Projects /> },
     { path: "/Contact", element: <Contact /> },
+    { path: "*", element: <Navigate to="/" /> },
   ]);
   return <Suspense fallback={<Loading />}>{routes}</Suspense>;
 };
