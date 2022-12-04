@@ -124,7 +124,11 @@ export const Contact = () => {
             <span
               className="validation"
               style={{
-                opacity: !isFocused.email || guestData.email ? 0 : 1,
+                opacity:
+                  !isFocused.email ||
+                  (guestData.email && emailRegex.test(guestData.email))
+                    ? 0
+                    : 1,
               }}
             >
               Please input correct email
