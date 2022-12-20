@@ -1,0 +1,18 @@
+footer.socials {
+  padding-bottom: 50px;
+  animation-name: main-opac;
+  animation-duration: 4s;
+  text-align: center;
+  .icon {
+    cursor: pointer;
+    svg {
+      font-size: 30px;
+      margin: 5px 10px;
+      color: $secondary-color;
+      transition: 0.3s transform;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { ProjectItem } from "../components/ProjectItem";
+import { Footer } from "../components/Footer";
 export const Projects = () => {
   const projetsList = [
     {
@@ -19,20 +20,23 @@ export const Projects = () => {
     },
   ];
   return (
-    <section className="projects">
-      <header>
-        <h1>My Highest Level Projects</h1>
-      </header>
-      <main className="projects-list">
-        {projetsList.map((l, index) => (
-          <ProjectItem
-            key={index}
-            name={l.name}
-            github={l.github}
-            website={l.website}
-          />
-        ))}
-      </main>
-    </section>
+    <>
+      <section className="projects">
+        <header>
+          <h1>My Highest Level Projects</h1>
+        </header>
+        <main className="projects-list">
+          {projetsList.map((l, index) => (
+            <ProjectItem
+              key={index}
+              name={l.name}
+              github={l.github}
+              website={l.website}
+            />
+          ))}
+        </main>
+        <Footer />
+      </section>
+    </>
   );
 };

@@ -3,6 +3,7 @@
 @import "home";
 @import "projects";
 @import "contact";
+@import "footer";
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 ::-webkit-scrollbar {
   width: 15px;
 }
