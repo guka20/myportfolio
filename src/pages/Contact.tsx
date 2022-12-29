@@ -173,7 +173,6 @@ export const Contact = () => {
             SEND MESSAGE
           </button>
         </main>
-        <Footer />
       </section>
     </>
   );

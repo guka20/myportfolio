@@ -1,9 +1,12 @@
 footer.socials {
+  display:block;
+  position:relative;
   padding-bottom: 50px;
   animation-name: main-opac;
   animation-duration: 4s;
   text-align: center;
   .icon {
+    display:inline;
     cursor: pointer;
     svg {
       font-size: 30px;

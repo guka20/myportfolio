@@ -35,7 +35,7 @@ export const Projects = () => {
             />
           ))}
         </main>
-        <Footer />
+        
       </section>
     </>
   );

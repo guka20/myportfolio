@@ -1,13 +1,9 @@
-import React from "react";
 import { saveAs } from "file-saver";
 import { Skills } from "../components/Skills";
 import { Footer } from "../components/Footer";
 export const Home = () => {
   const saveFile = () => {
-    saveAs(
-      require("../assets/Gurami-Davitadze.pdf"),
-      "Gurami-Davitadze-cv.pdf"
-    );
+    saveAs(require("../assets/Gurami-Davitadze.docx"), "Gurami-Davitadze.docx");
   };
   return (
     <>
@@ -18,9 +14,9 @@ export const Home = () => {
             <h1>Gurami Davitadze</h1>
             <h1>Front-End Developer</h1>
             <div className="description">
-              I am Front-End (ReactJS) Developer, I am able to build any type of
-              website for desktop as well as tablet and mobile. If you want to
-              see my resume click{" "}
+              Self-motivated individual with Front-end(Reactjs) development.
+              More than 1 year after started learning and still trying to
+              improve my skills and make bigger my possibilities. If you want see my resume click
               <button onClick={saveFile} className="save-cv">
                 here
               </button>
@@ -31,7 +27,6 @@ export const Home = () => {
           <h2>My Skills:</h2>
           <Skills />
         </main>
-        <Footer />
       </div>
     </>
   );
