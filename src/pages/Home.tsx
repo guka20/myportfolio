@@ -1,9 +1,8 @@
 import { saveAs } from "file-saver";
 import { Skills } from "../components/Skills";
-import { Footer } from "../components/Footer";
 export const Home = () => {
   const saveFile = () => {
-    saveAs(require("../assets/Gurami-Davitadze.docx"), "Gurami-Davitadze.docx");
+    saveAs(require("../assets/Gurami-Davitadze.pdf"), "Gurami-Davitadze.pdf");
   };
   return (
     <>
@@ -16,7 +15,8 @@ export const Home = () => {
             <div className="description">
               Self-motivated individual with Front-end(Reactjs) development.
               More than 1 year after started learning and still trying to
-              improve my skills and make bigger my possibilities. If you want see my resume click
+              improve my skills and make bigger my possibilities. If you want
+              see my resume click
               <button onClick={saveFile} className="save-cv">
                 here
               </button>
