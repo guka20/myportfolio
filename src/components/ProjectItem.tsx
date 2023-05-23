@@ -14,10 +14,10 @@ export const ProjectItem = ({ name, github, website }: ProjectItemProp) => {
       <hr />
       <div className="directions">
         <a href={github} target="_blank" rel="noreferrer">
-          <span>Demo</span>
+          <span>Code</span>
         </a>
         <a href={website} target="_blank" rel="noreferrer">
-          <span>View</span>
+          <span>Demo</span>
         </a>
       </div>
     </div>

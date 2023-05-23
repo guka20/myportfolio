@@ -14,7 +14,7 @@ export const Footer = () => {
           <BsFacebook />
         </a>
       </span>
-      <span className="icon">
+      {/* <span className="icon">
         <a
           href="https://www.linkedin.com/in/gurami-davitadze-5013a8224/"
           target="_blank"
@@ -22,7 +22,7 @@ export const Footer = () => {
         >
           <BsLinkedin />
         </a>
-      </span>
+      </span> */}
       <span className="icon">
         <a href="https://github.com/guka20" target="_blank" rel="noreferrer">
           <BsGithub />
